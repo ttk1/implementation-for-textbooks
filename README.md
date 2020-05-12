@@ -1,4 +1,6 @@
 # implementation-for-textbooks
+Issues, PRs are Welcome!
+Please share your opinion to improve correctness, clarity, maintainability, english grammar, etc. :)
 
 ## 01-tsa-shimada-2019
 
