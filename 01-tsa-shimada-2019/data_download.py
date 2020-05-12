@@ -14,17 +14,15 @@ data_dict = {
     'key2': 2, 
     'key3': 3}
 
+# download function
 def download(data_dict, dirpath):
     for filename, url in data_dict.items():
         filepath = os.path.join(dirpath, filename)
         if not os.path.exists(filepath): # download
-            print("{} : not exist".format(filename))
-            print("start downloading")
+            print("{} : not exist, start downloading".format(filename))
             
         else:
             print("{} : exist".format(filename))
         
-
+# yee
 download(data_dict, dirpath)
-
-# eeeeeeee

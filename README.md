@@ -8,4 +8,4 @@ Title : 時系列解析 ―自己回帰型モデル・状態空間モデル・�
 
 Detail : https://www.kyoritsu-pub.co.jp/bookdetail/9784320125018
 
-Errata correction : ~ver03
+Errata correction : yet
