@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import urllib.request
 
 # make data directory
 dirpath = "./data"
@@ -13,17 +14,17 @@ data_dict = {
     'key2': 2, 
     'key3': 3}
 
-
 def download(data_dict, dirpath):
     for filename, url in data_dict.items():
         filepath = os.path.join(dirpath, filename)
-
         if not os.path.exists(filepath): # download
             print("{} : not exist".format(filename))
             print("start downloading")
-            url = "https://www.analyticsvidhya.com/wp-content/uploads/2016/02/AirPassengers.csv"
+            
         else:
             print("{} : exist".format(filename))
         
 
 download(data_dict, dirpath)
+
+# eeeeeeee
