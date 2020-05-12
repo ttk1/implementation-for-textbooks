@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-import urllib.request
+import requests
 
 # make data directory
 dirpath = "./data"
@@ -11,18 +11,24 @@ if not os.path.exists(dirpath):
 # data_dict {filename:url}
 data_dict = {
     "AirPassengers.csv": "https://www.analyticsvidhya.com/wp-content/uploads/2016/02/AirPassengers.csv",
-    'key2': 2, 
-    'key3': 3}
+    "m_quote.csv": "https://www.mizuhobank.co.jp/market/csv/m_quote.csv"
+    }
 
 # download function
 def download(data_dict, dirpath):
     for filename, url in data_dict.items():
         filepath = os.path.join(dirpath, filename)
         if not os.path.exists(filepath): # download
-            print("{} : not exist, start downloading".format(filename))
-            
+            print("{} : start downloading".format(filename))
+            try:
+                content = requests.get(url).text
+                with open(filepath, "w") as f:
+                    f.write(content)
+                print(" download completed")
+            except:
+                print("Error! Invalid URL? Please check data_dict.")
         else:
-            print("{} : exist".format(filename))
+            print("{} : already exists".format(filename))
         
-# yee
+# execution
 download(data_dict, dirpath)
